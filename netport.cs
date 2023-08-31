@@ -16,9 +16,6 @@ namespace bwMonitor
         public long download { get; set; }
         public long bytesSent { get; set; }
         public long bytesReceived { get; set; }
-
-        public string unit { get; set; }
-
         
         public string intName { get; set; }
         public int intId { get; set; }
@@ -46,17 +43,6 @@ namespace bwMonitor
             newUpload = bytesSent;
             upload = ((newUpload - prevUpload)*8 / 1000);
             prevUpload = newUpload;
-            //if (upload > 1000)
-            //{
-            //    unit = "Mbps";
-            //    return upload / 1000;
-            //}
-            //else
-            //{
-            //    unit = "Kbps";
-            //    return upload;
-            //}
-            unit = "Kbps";
             return upload;
 
         }
@@ -67,17 +53,6 @@ namespace bwMonitor
             newDownload = bytesReceived;
             download = ((newDownload - prevDownload) * 8 /1000);
             prevDownload = newDownload;
-
-            //if(download > 1000)
-            //{
-            //    unit = "Mbps";
-            //    return download/1000;
-            //} else
-            //{
-            //    unit = "Kbps";
-            //    return download;
-            //}
-            unit = "Kbps";
             return download;
         }
 
